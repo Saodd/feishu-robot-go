@@ -86,11 +86,19 @@ type RobotPostContentGroup struct {
 	Title   string                           `json:"title"`
 	Content [][]RobotPostContentGroupContent `json:"content"`
 }
+
+// RobotPostContentGroupContent 富文本标签，文档见：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json#45e0953e
 type RobotPostContentGroupContent struct {
-	Tag    string `json:"tag"`
-	Text   string `json:"text,omitempty"`
-	Href   string `json:"href,omitempty"`
-	UserId string `json:"user_id,omitempty"`
+	Tag string `json:"tag"`
+
+	Text      string `json:"text,omitempty"`
+	Unescape  bool   `json:"un_escape,omitempty"`
+	Href      string `json:"href,omitempty"`
+	UserId    string `json:"user_id,omitempty"`
+	UserName  string `json:"user_name,omitempty"`
+	ImageKey  string `json:"image_key,omitempty"`
+	FileKey   string `json:"file_key,omitempty"`
+	EmojiType string `json:"emoji_type,omitempty"`
 }
 
 type RobotResponse struct {
